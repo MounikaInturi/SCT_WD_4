@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Category To-Do Manager</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📋 Category Task Manager</h1>
+    <div class="subtitle">Select a category, set date & time - no task names needed</div>
+  </div>
+
+  <!-- Add Task Section - Only Category, Date, Time -->
+  <div class="card">
+    <div class="add-task-form">
+      <div class="input-group">
+        <label>Task Category</label>
+        <select id="categoryInput">
+          <option value="Study">Study</option>
+          <option value="Playing">Playing</option>
+          <option value="Exercise">Exercise</option>
+          <option value="Sleeping">Sleeping</option>
+          <option value="Work">Work</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Reading">Reading</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Date</label>
+        <input type="date" id="dateInput" />
+      </div>
+      <div class="input-group">
+        <label>Time</label>
+        <input type="time" id="timeInput" />
+      </div>
+      <button class="btn btn-add" onclick="addTask()">+ Add Task</button>
+    </div>
+  </div>
+
+  <!-- Tasks Section -->
+  <div class="card">
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-num" id="totalTasks">0</div>
+        <div class="stat-label">Total Tasks</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="pendingTasks">0</div>
+        <div class="stat-label">Pending</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="completedTasks">0</div>
+        <div class="stat-label">Completed</div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="setFilter('all')">All</button>
+      <button class="filter-btn" onclick="setFilter('pending')">Pending</button>
+      <button class="filter-btn" onclick="setFilter('completed')">Completed</button>
+      <button class="filter-btn" onclick="setFilter('Study')">Study</button>
+      <button class="filter-btn" onclick="setFilter('Exercise')">Exercise</button>
+      <button class="filter-btn" onclick="setFilter('Playing')">Playing</button>
+      <button class="filter-btn" onclick="setFilter('Sleeping')">Sleeping</button>
+    </div>
+
+    <div id="taskList" class="task-list"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
